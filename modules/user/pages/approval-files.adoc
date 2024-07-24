@@ -22,6 +22,8 @@ image::approval-view.png[Список файлов для согласовани
 
 При первичной загрузке _основного_ файла к карточке документа версии файла будет присвоен номер `в.1`. Наименование следующих версий может отличаться в зависимости от вида маршрута согласования.
 
+include::6.1@approval:admin:setting-stage.adoc[tags=transfer]
+
 [#regular]
 === Обычное согласование
 
@@ -93,7 +95,7 @@ image::approval-file-versions-list.png[Текущая версия файла в
 .Команда скачивания версии в контекстном меню версии файла
 image::save-version.png[Команда скачивания версии в контекстном меню версии файла]
 +
-* Нажмите кнопку *Открыть*, чтобы открыть версию на редактирование в офисном редакторе. Потребуется DVWebTool или DVSupService, см. подробнее "xref:prepare-add-components.adoc#dvWebTool[Установка и запуск программы DVWebTool]" или "xref:prepare-add-components.adoc#dvsupservice[Установка и запуск службы DVSupService]".
+* Нажмите кнопку *Открыть*, чтобы открыть версию на редактирование в офисном редакторе. Потребуется DVWebTool или DVSupService, см. подробнее "xref:prepare-add-components.adoc#dvWebTool[Установка и запуск программы DVWebTool]" или "xref:prepare-add-components.adoc#dvSupService[Установка и запуск службы DVSupService]".
 +
 . Внесите требуемые изменения в файл.
 . Сохраните изменения в файле.
