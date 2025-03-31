@@ -1,4 +1,4 @@
-:ctrl-name: queryConditionsTable
+:page-ctrl-name: queryConditionsTable
 
 = Таблица параметров запроса
 
