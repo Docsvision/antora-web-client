@@ -372,6 +372,22 @@ public class WatermarkController : BaseService <.>
 
 NOTE: Реализации данных сервисов смотрите в исходных кодах примера на GitHub.
 
+Для работы функции автоматического закрытия DVWebTool необходимо `WebToolExtensionManager` наследовать `IServiceManagerEx` и зарегистрировать `OpenFilesController` через `AddWebSocketService` с двумя параметрами: `AddWebSocketService<TBehavior>(string path, Func<TBehavior> creator)`. В `creator` нужно проинициализировать `OnMessageReceived` и `OnMessageProcessed`, например, так:
+
+[source,csharp]
+----
+OpenFilesController Creator()
+{
+	OpenFilesController controller = new OpenFilesController();
+	controller.OnMessageReceived = onMessageReceived;
+	controller.OnMessageProcessed = onMessageProcessed;
+	return controller;
+}
+server.AddWebSocketService("/OpenFiles", Creator);
+----
+
+Аналогичные действия справедливы, если необходимо автоматическое закрытие DVWebTool после выполнения действий из `PrintFilesController`.
+
 После публикации расширения _DVWebTool_, зарегистрированный в расширении метод `AddWatermarkToFiles` контроллера `Watermark` может быть вызван из клиентского расширения {wc}а с помощью сервиса `DVWebToolConnection`.
 
 == Клиентское расширение
