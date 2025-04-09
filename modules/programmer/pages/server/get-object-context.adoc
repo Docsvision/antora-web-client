@@ -9,7 +9,9 @@
 Получить контекст объектов можно используя функции сервиса `ICurrentObjectContextProvider`:
 
 * `GetOrCreateCurrentSessionContext` -- возвращает контекст объектов текущего пользователя.
-* `GetOrCreateApplicationPoolSessionContext` -- возвращает серверный контекст объектов.
+// * `GetOrCreateApplicationPoolSessionContext` -- возвращает серверный контекст объектов.
++
+WARNING: Не используйте метод `GetOrCreateApplicationPoolSessionContext`, это приведет к блокировкам потоков под нагрузкой. В первую очередь нужно использовать метод `GetOrCreateCurrentSessionContext`.
 
 Сервис `ICurrentObjectContextProvider` может быть получен двумя способами:
 
