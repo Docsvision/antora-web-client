@@ -23,6 +23,10 @@
 . Закройте веб-браузер и запустите загруженный файл `cadesplugin.exe`. Будет предложено установить "КриптоПро ЭЦП Browser plug-in".
 . Согласитесь с установкой и дождитесь её завершения.
 . Установите расширение CryptoPro Extension for CAdES Browser Plug-in со https://chrome.google.com/webstore/detail/cryptopro-extension-for-c/iifchhfnnmpdbibifmljnfjhpififfog[страницы расширения].
++
+.. Если расширение плагина имеется в списке установленных, но отключёно, необходимо самостоятельно включить его в браузере.
+.. Если расширение отсутствует в списке или недоступно в магазине приложений, вы можете установить расширение, воспользовавшись https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/467/0/ustnovk-rsshirenija-dlja-plgin-iz-fjjl[инструкцией] на сайте КриптоПро. Вы также можете продолжить работу с электронной подписью в браузерах https://cryptopro.ru/products/chromium-gost[Chromium-Gost] или https://browser.yandex.ru/b/cryptopro_plugin[Яндекс Браузер] с полной поддержкой необходимой функциональности.
++
 . Установите сертификаты пользователя.
 +
 .. Неквалифицированный сертификат установите в хранилище _Личное_ на уровне _Текущий пользователь_.
