@@ -63,7 +63,7 @@ ifdef::root-cert[{root-cert}]
     <Setting Name="VerifyUrl" Value="https://dss.cryptopro.ru/verify/rest/api/signatures" /> <.>
     <Setting Name="TSPServiceAddress" Value="" /> <.>
     <Setting Name="SignatureType" Value="BES" /> <.>
-    <Setting Name="AuthorizeRedirectUrl" Value="http://адрес-Web-клиента-Docsvision/api/CryptoProDss/AcceptAuthorization" /> <.>
+    <Setting Name="AuthorizeRedirectUrl" Value="http://адрес-{wc}а-Docsvision/api/CryptoProDss/AcceptAuthorization" /> <.>
     <Setting Name="TokenStorageMode" Value="InMemory" /> <.>
 </SettingGroup>
 ----
