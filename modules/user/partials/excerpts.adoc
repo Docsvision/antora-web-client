@@ -227,10 +227,6 @@ WARNING: Добавление, удаление и изменение данны
 . Откройте Справочник контрагентов нажатием кнопки image:buttons/book.png[Книга] в поле выбора организации контрагента.
 // end::openPartners[]
 
-// tag::foldUnfoldDir[]
-Чтобы раскрыть {element}, нажмите на image:5.5.17@webclient:user:buttons/unfold.png[Плюс] слева от его названия. Чтобы свернуть {element}, нажмите на image:5.5.17@webclient:user:buttons/fold.png[Минус]. При нажатии левой кнопкой мыши, {element} переходит в фокус, в правой области справочника отображаются {things}.
-// end::foldUnfoldDir[]
-
 // tag::employeesLimited[]
 [WARNING]
 ====
