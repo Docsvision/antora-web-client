@@ -3,7 +3,7 @@
 Если поле разметки предназначено для ввода даты и времени, оно будет иметь вид:
 
 .Поля для ввода даты и времени
-image::date-time.png[Поля для ввода даты и времени]
+image::GBL-3828@webclient:user:date-time.png[Поля для ввода даты и времени]
 
 Если поле настроено только для ввода даты, то область ввода/отображения времени будет скрыта.
 
@@ -19,12 +19,12 @@ image::date-time.png[Поля для ввода даты и времени]
 [#calendar]
 == Выбор даты и времени из календаря
 
-Чтобы открыть календарь, нажмите кнопку image:buttons/calendar-grey.png[Календарь].
+Чтобы открыть календарь, нажмите кнопку image:GBL-3828@webclient:user:buttons/calendar-grey.png[Календарь].
 
-Выбор даты осуществляется на странице image:buttons/calendar-blue.png[Календарь].
+Выбор даты осуществляется на странице image:GBL-3828@webclient:user:buttons/calendar-blue.png[Календарь].
 
 .Календарь
-image::calendar.png[Календарь]
+image::GBL-3828@webclient:user:calendar.png[Календарь]
 
 Чтобы изменить год, нажмите на текущее значение. Будет открыт список лет.
 
@@ -32,18 +32,18 @@ image::calendar.png[Календарь]
 
 С помощью кнопок *+1*, *+2*, *+3*, *+Неделя* можно выбрать дату с заданным смещением относительно текущей даты и текущим временем.
 
-Выбор времени осуществляется на странице image:buttons/clock-blue.png[Часы].
+Выбор времени осуществляется на странице image:GBL-3828@webclient:user:buttons/clock-blue.png[Часы].
 
-WARNING: Возможность выбирать время xref:layouts:ctrl/standard/dateTimePicker.adoc#noTime[может быть отключена] для элемента управления.
+WARNING: Возможность выбирать время xref:GBL-3828@webclient:layouts:ctrl/standard/dateTimePicker.adoc#noTime[может быть отключена] для элемента управления.
 
 .Выбор времени
-image::calendar-time.png[Выбор времени]
+image::GBL-3828@webclient:user:calendar-time.png[Выбор времени]
 
 Выберите часы, затем минуты.
 
 == Очистка значения
 
-Нажмите кнопку image:buttons/x-red-circle.png[Крестик], чтобы очистить значение элемента управления.
+Нажмите кнопку image:GBL-3828@webclient:user:buttons/x-red-circle.png[Крестик], чтобы очистить значение элемента управления.
 
 == Проверка значения
 

@@ -41,7 +41,7 @@
 
 [#xslt]
 Учитывать HTML-форматирование при экспорте::
-HTML-текст почтовых уведомлений в новых БД по умолчанию будет отображаться в отформатированном виде. Подробнее см. xref:user:appendix/email-button.adoc#xslt["Кнопка отправки письмом"] и xref:user:docs-print-card.adoc#xslt["Отправить карточку на печать"].
+HTML-текст почтовых уведомлений в новых БД по умолчанию будет отображаться в отформатированном виде. Подробнее см. xref:user:appendix/email-button.adoc#xslt["Кнопка отправки письмом"] и xref:documentmgmt:user-web:docs-print-card.adoc#xslt["Отправить карточку на печать"].
 
 [#acknowledgement]
 Лист ознакомления::
@@ -61,11 +61,11 @@ HTML-текст почтовых уведомлений в новых БД по 
 
 [#cloud-sign]
 Использование облачной подписи::
-Изменён диалог подписания документов и добавлена возможность подписать карточки xref:user:docs-sign-cloud.adoc[облачной подписью].
+Изменён диалог подписания документов и добавлена возможность подписать карточки xref:documentmgmt:user-web:docs-sign-cloud.adoc[облачной подписью].
 
 [#sign-dialog]
 Изменился диалог подписания::
-xref:user:docs-sign.adoc[Диалог подписания] переработан, также изменился xref:user:docs-sign-algorithm.adoc[алгоритм] выбора сертификатов в диалоге.
+xref:documentmgmt:user-web:docs-sign.adoc[Диалог подписания] переработан, также изменился xref:documentmgmt:user-web:docs-sign-algorithm.adoc[алгоритм] выбора сертификатов в диалоге.
 
 [#api-signature]
 Управление подписанием через API::

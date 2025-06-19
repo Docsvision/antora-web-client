@@ -41,7 +41,7 @@ include::user:partial$excerpts.adoc[tags=signature]
 . Неквалифицированный сертификат пользователя. Сертификат должен быть установлен в хранилище _Личное_ на уровне _Текущий пользователь_.
 . Компоненты КриптоПро TSP Client, КриптоПро OCSP Client и лицензия на них не требуются.
 . Требуются компоненты КриптоПро CSP {csp-v}, лицензия на компоненты не требуется.
-. Опционально, для работы с подписью xref:user:docs-sign.adoc#mobile[на мобильных устройствах] -- приложение КриптоПро https://www.cryptopro.ru/products/mydss2#law[myDSS 2.0] или https://www.cryptopro.ru/products/dss/mobile/dssclient[DSS Client]. Приложения обладают схожей функциональностью, рекомендуется использовать DSS Client как официальное приложение КриптоПро.
+. Опционально, для работы с подписью xref:documentmgmt:user-web:docs-sign.adoc#mobile[на мобильных устройствах] -- приложение КриптоПро https://www.cryptopro.ru/products/mydss2#law[myDSS 2.0] или https://www.cryptopro.ru/products/dss/mobile/dssclient[DSS Client]. Приложения обладают схожей функциональностью, рекомендуется использовать DSS Client как официальное приложение КриптоПро.
 
 [#long]
 == Формирование и проверка усовершенствованной подписи (CAdES-X Long Type 1)

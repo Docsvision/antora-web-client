@@ -5,14 +5,14 @@
 NOTE: На этапе подписания не предполагается добавление новых версий файлов.
 
 .Чтобы получить задание на подписание, выполните следующие действия:
-include::partial$excerpts.adoc[tags=incomingFolder]
+include::GBL-3828@webclient:user:partial$excerpts.adoc[tags=incomingFolder]
 +
 . Откройте полученное задание _На подписание_ с состоянием `Не начато`.
 +
 .Пример открытого задания на подписание
-image::approval-signee.png[Пример открытого задания на подписание]
+image::GBL-3828@webclient:user:approval-signee.png[Пример открытого задания на подписание]
 +
-include::partial$approval.adoc[tags=fields]
+include::GBL-3828@webclient:user:partial$approval.adoc[tags=fields]
 +
 . Выполните требуемые операции с версиями подписываемых файлов.
 ****
@@ -41,18 +41,18 @@ NOTE: Подробнее о работе с версиями см. раздел:
 +
 [NOTE]
 ====
-include::user:partial$excerpts.adoc[tags=signature]
+include::GBL-3828@webclient:user:partial$excerpts.adoc[tags=signature]
 ====
 +
 ****
 Задание будет завершено. Добавленный к решению комментарий будет отображаться в области *Ход согласования*
 
-После завершения согласования итоговая версия файла будет перенесена в согласуемый документ вместе с подписями данной версии. До завершения согласования подписи файла в xref:docs-sign.adoc#signature-log[Журнале подписей] не отображаются. Подписи атрибутов карточки Документ отображаются сразу после подписания и не зависят от итоговой версии файла.
+После завершения согласования итоговая версия файла будет перенесена в согласуемый документ вместе с подписями данной версии. До завершения согласования подписи файла в xref:GBL-3828@documentmgmt:user-web:docs-sign.adoc#signature-log[Журнале подписей] не отображаются. Подписи атрибутов карточки Документ отображаются сразу после подписания и не зависят от итоговой версии файла.
 
 [NOTE]
 ====
 include::5.5.4@documentmgmt:user:partial$excerpts.adoc[tags=35mb]
 
-include::partial$excerpts.adoc[tags=appRequired]
+include::GBL-3828@webclient:user:partial$excerpts.adoc[tags=appRequired]
 ====
 ****

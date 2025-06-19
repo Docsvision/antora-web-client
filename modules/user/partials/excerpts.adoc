@@ -201,9 +201,9 @@ xref:appendix/date-time.adoc[Дата создания]::
 
 // tag::powers[]
 * Открытие и просмотр карточки.
-* xref:tasks-related-docs.adoc[Выполнение операций со связанными документами].
-* xref:tasks-related.adoc[Операции со связанными заданиями и документами].
-* xref:tasks-comment.adoc[Управление комментариями].
+* xref:documentmgmt:user-web:tasks-related-docs.adoc[Выполнение операций со связанными документами].
+* xref:documentmgmt:user-web:tasks-related.adoc[Операции со связанными заданиями и документами].
+* xref:documentmgmt:user-web:tasks-comment.adoc[Управление комментариями].
 // end::powers[]
 
 // tag::fulfillmentTerm[]
@@ -317,7 +317,7 @@ NOTE: Указанная дата `с ...` должна быть раньше д
 // end::clickFlag[]
 
 // tag::extraSheets[]
-Из режима предпросмотра карточку можно xref:docs-print-card.adoc[отправить на печать]. При печати из браузеров Internet Explorer и Edge (до перехода на Chromium в версии 79) в конечном документе могут быть лишние листы и записи. Для корректной печати используйте более современные браузеры.
+Из режима предпросмотра карточку можно xref:documentmgmt:user-web:docs-print-card.adoc[отправить на печать]. При печати из браузеров Internet Explorer и Edge (до перехода на Chromium в версии 79) в конечном документе могут быть лишние листы и записи. Для корректной печати используйте более современные браузеры.
 // end::extraSheets[]
 
 // tag::functionIsNotAvailable[]

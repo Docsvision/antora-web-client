@@ -7,7 +7,7 @@ _Автор_ может изменить параметры активного �
 .Чтобы изменить параметры активного согласования:
 . Откройте карточку согласуемого документа.
 // tag::approvalControlPanel[]
-. Откройте панель управления активным согласованием нажатием кнопки *Управление* на xref:cards-terms.adoc#cards-operations[панели операций].
+. Откройте панель управления активным согласованием нажатием кнопки *Управление* на xref:GBL-3828@webclient:user:cards-terms.adoc#cards-operations[панели операций {wc}а].
 +
 NOTE: Кнопка *Управление* может быть недоступна, если у пользователя отсутствуют права на управление согласованием.
 +
@@ -25,7 +25,7 @@ NOTE: Кнопка *Управление* может быть недоступн
 _Автор_ может принудительно завершить текущий этап согласования из карточки согласуемого документа.
 
 .Чтобы принудительно завершить текущий этап согласования:
-include::approval-manage.adoc[tags=approvalControlPanel]
+include::GBL-3828@webclient:user:approval-manage.adoc[tags=approvalControlPanel]
 . Нажмите кнопку *Завершить этап* в строке текущего этапа согласования (выделяется голубым цветом).
 +
 ****
@@ -36,7 +36,7 @@ include::approval-manage.adoc[tags=approvalControlPanel]
 
 _Автор_ может на время приостановить активное согласование из карточки согласуемого документа.
 
-include::approval-manage.adoc[tags=approvalControlPanel]
+include::GBL-3828@webclient:user:approval-manage.adoc[tags=approvalControlPanel]
 . Нажмите кнопку *Пауза*.
 +
 ****
@@ -50,7 +50,7 @@ include::approval-manage.adoc[tags=approvalControlPanel]
 _Автор_ может отменить активное согласование из карточки согласуемого документа.
 
 .Чтобы отменить согласование:
-include::approval-manage.adoc[tags=approvalControlPanel]
+include::GBL-3828@webclient:user:approval-manage.adoc[tags=approvalControlPanel]
 . Нажмите кнопку *Отменить*.
 +
 ****
@@ -62,7 +62,7 @@ include::approval-manage.adoc[tags=approvalControlPanel]
 _Автор_ может принудительно завершить процесс активного согласования из карточки согласуемого документа.
 
 .Чтобы принудительно завершить согласование:
-include::approval-manage.adoc[tags=approvalControlPanel]
+include::GBL-3828@webclient:user:approval-manage.adoc[tags=approvalControlPanel]
 . Нажмите кнопку *Завершить*.
 +
 ****
