@@ -148,7 +148,7 @@ _Обязательно для заполнения_.
 // end::scanOrFileSystem[]
 
 // tag::documentDate[]
-xref:appendix/date-time.adoc[Дата создания]::
+xref:5.5.17@webclient:user:appendix/date-time.adoc[Дата создания]::
 Дата создания документа. По умолчанию устанавливаются текущие дата и время.
 // end::documentDate[]
 
