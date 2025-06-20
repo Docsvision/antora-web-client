@@ -22,7 +22,7 @@ image::6.1_GBL-3828@webclient:user:links.png[Ссылки]
 +
 Показывает меню операций со ссылкой.
 
-NOTE: Возможность добавления ссылок на некоторые типы карточек xref:layouts:ctrl/special/links.adoc#cardTypesLimited[может быть недоступна].
+NOTE: Возможность добавления ссылок на некоторые типы карточек xref:6.1_GBL-3828@webclient:layouts:ctrl/special/links.adoc#cardTypesLimited[может быть недоступна].
 
 [#old]
 == Добавление ссылки на существующую карточку

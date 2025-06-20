@@ -167,7 +167,7 @@ xref:6.1_GBL-3828@webclient:user:appendix/date-time.adoc[Дата создани
 // end::appRequired[]
 
 // tag::signature[]
-Для формирования усиленной подписи с использованием сертификатов ЭП должны быть xref:admin:install-cryptopro.adoc[установлены] компоненты КриптоПро.
+Для формирования усиленной подписи с использованием сертификатов ЭП должны быть xref:6.1_GBL-3828@webclient:admin:install-cryptopro.adoc[установлены] компоненты КриптоПро.
 // end::signature[]
 
 // tag::letters[]
