@@ -134,7 +134,7 @@ _Обязательно для заполнения_.
 // end::scanOrFileSystem[]
 
 // tag::documentDate[]
-xref:appendix/date-time.adoc[Дата создания]::
+xref:6.1_GBL-3828@webclient:user:appendix/date-time.adoc[Дата создания]::
 Дата создания документа. По умолчанию устанавливаются текущие дата и время.
 // end::documentDate[]
 
@@ -184,9 +184,9 @@ NOTE: Хранение букв `ё` и `й` в операционных сис�
 
 // tag::powers[]
 * Открытие и просмотр карточки.
-* xref:tasks-related-docs.adoc[Выполнение операций со связанными документами].
-* xref:tasks-related.adoc[Операции со связанными заданиями и документами].
-* xref:tasks-comment.adoc[Управление комментариями].
+* xref:6.1_GBL-3828@documentmgmt:user-web:tasks-related-docs.adoc[Выполнение операций со связанными документами].
+* xref:6.1_GBL-3828@documentmgmt:user-web:tasks-related.adoc[Операции со связанными заданиями и документами].
+* xref:6.1_GBL-3828@documentmgmt:user-web:tasks-comment.adoc[Управление комментариями].
 // end::powers[]
 
 // tag::fulfillmentTerm[]
@@ -304,7 +304,7 @@ NOTE: Указанная дата `с ...` должна быть раньше д
 // end::clickFlag[]
 
 // tag::extraSheets[]
-Из режима предпросмотра карточку можно xref:docs-print-card.adoc[отправить на печать]. При печати из браузеров Internet Explorer и Edge (до перехода на Chromium в версии 79) в конечном документе могут быть лишние листы и записи. Для корректной печати используйте более современные браузеры.
+Из режима предпросмотра карточку можно xref:6.1_GBL-3828@documentmgmt:user-web:docs-print-card.adoc[отправить на печать]. При печати из браузеров Internet Explorer и Edge (до перехода на Chromium в версии 79) в конечном документе могут быть лишние листы и записи. Для корректной печати используйте более современные браузеры.
 // end::extraSheets[]
 
 // tag::functionIsNotAvailable[]
