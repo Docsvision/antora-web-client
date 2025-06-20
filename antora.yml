@@ -23,7 +23,6 @@ asciidoc:
     chromium-v: '114.0.5735'
     yandex: 'Яндекс.Браузер 23 и выше'
     safari: 'Safari 16 и выше'
-    word: '2013 или 2016'
     win: '7 SP 1/8/8.1/10'
     sign-plugin: '2.0'
     cades: '2.0'
