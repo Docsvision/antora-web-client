@@ -1,6 +1,6 @@
 name: webclient
-version: "5.5.17"
-prerelease: false
+version: "TSK-11773"
+prerelease: true
 title: Web-клиент
 asciidoc:
   attributes:
@@ -33,11 +33,8 @@ asciidoc:
     serv-4: '2019 (Standard, DataCenter)'
     iis: 'IIS версий 7.5, 8.0, 8.5 или 10'
     asp: 'ASP.NET 4.0@'
-    node-v: 'v16.20.0'
     chrome-ext: '1.2.4 и выше'
     edi-v: '5.5.3158.0'
-    vscode-v: '2022'
-
 nav:
 - modules/ROOT/nav.adoc
 - modules/common/common.adoc
