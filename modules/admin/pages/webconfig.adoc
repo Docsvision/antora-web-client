@@ -145,13 +145,6 @@ include::user-session-timeout.adoc[tags=webconfig]
 
 Подробнее см. "xref:user-session-timeout.adoc[]".
 
-[#session-clear]
-=== Очистка пользовательских сессий
-
-include::clear-cache-config.adoc[tags=webconfig]
-
-Подробнее см. "xref:clear-cache-config.adoc[]".
-
 [#session-close]
 === Закрытие неактивных сессии
 
@@ -182,6 +175,13 @@ include::digital-sign-stamp.adoc[tags=webconfig]
 include::install-cryptopro.adoc[tags=webconfig]
 
 Подробнее см. "xref:install-cryptopro.adoc[]".
+
+[#sign-d-load]
+=== Скачивание файла в браузер
+
+include::download-signature.adoc[tags=webconfig]
+
+Подробнее см. "xref:download-signature.adoc[]".
 
 [#views]
 == Настройки представлений

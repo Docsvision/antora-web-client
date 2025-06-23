@@ -18,7 +18,12 @@ include::ROOT:page$requirements-signature.adoc[tags=macOS]
 . Перейдите по ссылке _Установить КриптоПро ЭЦП Browser plug-in_. Будет загружен файл `cadesplugin.exe`.
 . Закройте веб-браузер и запустите загруженный файл `cadesplugin.exe`. Будет предложено установить _КриптоПро ЭЦП Browser plug-in_.
 . Согласитесь с установкой и дождитесь её завершения.
-. Установите расширение CryptoPro Extension for CAdES Browser Plug-in со https://chrome.google.com/webstore/detail/cryptopro-extension-for-c/iifchhfnnmpdbibifmljnfjhpififfog[страницы расширения].
+. Установите и активируйте расширение для браузера в зависимости от вашей операционной системы и используемого браузера:
++
+* https://docs.cryptopro.ru/cades/plugin/plugin-installation-windows[Windows]
+* https://docs.cryptopro.ru/cades/plugin/plugin-installation-unix[Linux]
+* https://docs.cryptopro.ru/cades/plugin/plugin-installation-macos[MacOS]
++
 .. Если расширение плагина имеется в списке установленных, но отключёно, необходимо самостоятельно включить его в браузере.
 .. Если расширение отсутствует в списке или недоступно в магазине приложений, вы можете установить расширение, воспользовавшись https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/467/0/ustnovk-rsshirenija-dlja-plgin-iz-fjjl[инструкцией] на сайте КриптоПро. Вы также можете продолжить работу с электронной подписью в браузерах https://cryptopro.ru/products/chromium-gost[Chromium-Gost] или https://browser.yandex.ru/b/cryptopro_plugin[Яндекс Браузер] с полной поддержкой необходимой функциональности
 +
@@ -108,12 +113,12 @@ WARNING: Служба _DVSupService_ работает только в ОС Linux
 +
 [tabs]
 ====
-Astra Linux::
+{os1}::
 +
 [subs=attributes]
  $ sudo apt install docsvision-{wt}
 
-РЕД ОС::
+{os2}::
 +
 [subs=attributes]
  $ sudo dnf install docsvision-{wt}
@@ -138,19 +143,21 @@ WARNING: При работе _DVSupService_ с Р7-Офис может появ�
 +
 [source,json]
 ----
+{
 "fileName": "/var/log/docsvision/dvsupservice/${shortdate}_DvSupService.log"
+}
 ----
 +
 . [[about-dvsup]]Чтобы просмотреть информацию о службе, выполните команду:
 +
 [tabs]
 ====
-Astra Linux::
+{os1}::
 +
 [subs=attributes]
  $ apt list docsvision-{wt}
 
-РЕД ОС::
+{os2}::
 +
 [subs=attributes]
  $ dnf list docsvision-{wt}
@@ -160,7 +167,7 @@ Astra Linux::
 +
 [tabs]
 ====
-Astra Linux::
+{os1}::
 +
 [source,subs=attributes]
 ----
@@ -168,7 +175,7 @@ sudo apt-get update
 sudo apt-get install docsvision-{wt}
 ----
 
-РЕД ОС::
+{os2}::
 +
 [subs=attributes]
  $ sudo dnf update docsvision-{wt}
@@ -178,12 +185,12 @@ sudo apt-get install docsvision-{wt}
 +
 [tabs]
 ====
-Astra Linux::
+{os1}::
 +
 [subs=attributes]
  $ sudo apt-get purge --autoremove docsvision-{wt}
 
-РЕД ОС::
+{os2}::
 +
 [subs=attributes]
  $ sudo dnf remove package docsvision-{wt}
