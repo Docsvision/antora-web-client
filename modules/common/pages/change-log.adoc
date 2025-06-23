@@ -37,7 +37,7 @@
 
 [#auth-page]
 Настройка страницы авторизации::
-Добавлена возможность xref:TSK-11773@programmer:WebClient:client/authorization.adoc[настроить] страницу входа в {wc}.
+Добавлена возможность xref:dv5@programmer:WebClient:client/authorization.adoc[настроить] страницу входа в {wc}.
 
 [#xslt]
 Учитывать HTML-форматирование при экспорте::
@@ -69,7 +69,7 @@ xref:user:docs-sign.adoc[Диалог подписания] переработа
 
 [#api-signature]
 Управление подписанием через API::
-Добавлена возможность xref:TSK-11773@programmer:WebClient:client/signing-api.adoc[управления] диалогом подписания через API.
+Добавлена возможность xref:dv5@programmer:WebClient:client/signing-api.adoc[управления] диалогом подписания через API.
 
 [#certificate]
 Сертификат ЭП сотрудника::
@@ -341,8 +341,8 @@ CertificateSettings::
 [#api]
 == Изменения в API
 
-* xref:TSK-11773@programmer:WebClient:server/data-grid-control.adoc#api[Добавлены] новые методы и события API для контролов с табличным UI.
-* Был xref:TSK-11773@programmer:WebClient:how-to-use-rest.adoc[добавлен REST Web-API], доступный на стороне клиента {wc}а, который может вызывать функции {dv} API. REST API предназначается для работы из клиентских скриптов.
+* xref:dv5@programmer:WebClient:server/data-grid-control.adoc#api[Добавлены] новые методы и события API для контролов с табличным UI.
+* Был xref:dv5@programmer:WebClient:how-to-use-rest.adoc[добавлен REST Web-API], доступный на стороне клиента {wc}а, который может вызывать функции {dv} API. REST API предназначается для работы из клиентских скриптов.
 * Внутренние компоненты `FileSignCreateDialog`, `FileSignSelectCertificateDialog` и связанные с ними заменены на `SignatureDialog`.
 * Сервис `$DocumentCardController` заменён на `$SignatureController`.
 * Во внутреннем классе `FileSign` удалена часть методов.
@@ -394,11 +394,11 @@ WebClient.app.cloudSignature.needsAuthorization = () => false;
 
 В репозиторий https://github.com/{dv}/WebClient-Samples/[WebClient-Samples] на GitHub добавлены новые примеры:
 
-* xref:TSK-11773@programmer:WebClient:client/grid-toolbar-button.adoc[].
-* xref:TSK-11773@programmer:WebClient:client/grid-line-background.adoc[].
-* xref:TSK-11773@programmer:WebClient:client/grid-group-by-icon.adoc[].
-* xref:TSK-11773@programmer:WebClient:client/grid-context.adoc[].
-* xref:TSK-11773@programmer:WebClient:server/excel-export.adoc[].
-* xref:TSK-11773@programmer:WebClient:client/extend-server-query.adoc[].
-* xref:TSK-11773@programmer:WebClient:client/file-list-row.adoc[].
-* xref:TSK-11773@programmer:WebClient:client/authorization.adoc[].
+* xref:dv5@programmer:WebClient:client/grid-toolbar-button.adoc[].
+* xref:dv5@programmer:WebClient:client/grid-line-background.adoc[].
+* xref:dv5@programmer:WebClient:client/grid-group-by-icon.adoc[].
+* xref:dv5@programmer:WebClient:client/grid-context.adoc[].
+* xref:dv5@programmer:WebClient:server/excel-export.adoc[].
+* xref:dv5@programmer:WebClient:client/extend-server-query.adoc[].
+* xref:dv5@programmer:WebClient:client/file-list-row.adoc[].
+* xref:dv5@programmer:WebClient:client/authorization.adoc[].
