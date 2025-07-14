@@ -8,7 +8,7 @@
 
 // tag::webconfig[]
 .Чтобы отключить кэширование настроек:
-. Откройте конфигурационный файл `{webconfig}`.
+. Откройте конфигурационный файл `{webconfig-win}`.
 . Перейдите к секции menu:configuration[WebClient > SettingGroups > SettingGroup[Name="DirectoryCache"\]].
 . Измените на *_false_* значение параметра:
 +
