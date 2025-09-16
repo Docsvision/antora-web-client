@@ -38,6 +38,9 @@ include::user:partial$excerpts.adoc[tags=signature]
 . Веб-браузер: Google Chrome, Яндекс.Браузер или Microsoft Edge на Chromium (поддерживаемые версии см. в пункте xref:requirements-software.adoc[Необходимое программное обеспечение]).
 . КриптоПро ЭЦП Browser plug-in версии {sign-plugin} (https://www.cryptopro.ru/products/cades/plugin[ссылка для загрузки]).
 . CryptoPro Extension for CAdES Browser Plug-in версии {chrome-ext} (https://chrome.google.com/webstore/detail/cryptopro-extension-for-c/iifchhfnnmpdbibifmljnfjhpififfog[ссылка для загрузки]).
++
+include::partial$excerpts.adoc[tags=plugin]
++
 . Неквалифицированный сертификат пользователя. Сертификат должен быть установлен в хранилище _Личное_ на уровне _Текущий пользователь_.
 . Компоненты КриптоПро TSP Client, КриптоПро OCSP Client и лицензия на них не требуются.
 . Требуются компоненты КриптоПро CSP {csp-v}, лицензия на компоненты не требуется.
@@ -56,6 +59,9 @@ include::user:partial$excerpts.adoc[tags=signature]
 . Веб-браузер: Google Chrome, Яндекс.Браузер или Microsoft Edge на Chromium (поддерживаемые версии см. в пункте xref:requirements-software.adoc#browser[Необходимое программное обеспечение]).
 . xref:user:prepare-add-components.adoc#cryptoPro[КриптоПро ЭЦП Browser plug-in] версии {sign-plugin}.
 . CryptoPro Extension for CAdES Browser Plug-in версии {chrome-ext} (https://chrome.google.com/webstore/detail/cryptopro-extension-for-c/iifchhfnnmpdbibifmljnfjhpififfog[ссылка для загрузки]).
++
+include::partial$excerpts.adoc[tags=plugin]
++
 . КриптоПро CSP версии {csp-v}, потребуется лицензия для каждого пользователя.
 . Компоненты КриптоПро TSP Client и КриптоПро OCSP Client и лицензия на них для каждого пользователя.
 . {root-cert} Должен быть установлен в хранилище _Доверенные корневые центры сертификации_ на уровне _Локальный компьютер_.
