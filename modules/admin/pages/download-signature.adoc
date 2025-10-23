@@ -6,8 +6,8 @@ WARNING: Изменение поведения по умолчанию може�
 
 // tag::webconfig[]
 .Чтобы изменить режим скачивания подписи:
-. Откройте конфигурационный файл, расположенный по адресу `{webconfig}`.
-. Перейдите к разделу {cnf-sgrps-wc}].
+. Откройте конфигурационный файл, расположенный по адресу `{webconfig-win}`.
+. Перейдите к разделу menu:{dv}[WebClient > SettingGroups > WebClient].
 . Измените значение параметра `CalculateSignatureHashOnServer` с `true` на `false`.
 +
 [source,json]
