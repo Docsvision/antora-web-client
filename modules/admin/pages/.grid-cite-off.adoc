@@ -1,0 +1,37 @@
+= Отключение цитат в режиме ленты
+
+В исключительных случаях большое количество файлов с цитатами может вызывать ошибки при поиске. Когда использование цитат отключено, поиск в режиме ленты будет работать аналогично режиму грида (без цитат).
+
+.Чтобы отключить использование цитат:
+. Задайте настройку в БД при помощи скрипта. Значение `false` -- настройка отключена, цитаты отображаются (значение по умолчанию); `true` -- настройка включена, цитаты не отображаются:
++
+.Для {mssql}:
+[source,sql]
+----
+DECLARE true bit =1
+EXEC dvsys_setting_set N'DisableSearchCitations', true
+----
++
+.Для {pgsql}:
+[source,pgsql]
+----
+select * from dvsys_setting_set('DisableSearchCitations', true);
+----
++
+. Перезапустите *{sss-new}*.
+. Если снова необходимо включить цитаты, в БД выполните скрипт:
++
+.Для {mssql}:
+[source,sql]
+----
+DECLARE false bit =1
+EXEC dvsys_setting_set N'DisableSearchCitations', false
+----
++
+.Для {pgsql}:
+[source,pgsql]
+----
+select * from dvsys_setting_set('DisableSearchCitations', false);
+----
++
+. Снова перезапустите *{sss-new}*.
