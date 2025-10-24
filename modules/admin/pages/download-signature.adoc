@@ -7,20 +7,12 @@ WARNING: Изменение поведения по умолчанию може�
 // tag::webconfig[]
 .Чтобы изменить режим скачивания подписи:
 . Откройте конфигурационный файл, расположенный по адресу `{webconfig-win}`.
-. Перейдите к разделу menu:{dv}[WebClient > SettingGroups > WebClient].
+. Перейдите к разделу {setgroups-wc}.
 . Измените значение параметра `CalculateSignatureHashOnServer` с `true` на `false`.
 +
-[source,json]
+[source,xml]
 ----
-  "Docsvision": {
-    "WebClient": {
-      "SettingGroups": {
-        "WebClient": {
-          "CalculateSignatureHashOnServer": true <.>
-        }
-      }
-    }
-  }
+<Setting Name="CalculateSignatureHashOnServer" Value="True" /> <.>
 ----
 <.> `true` -- скачивается только хэш подписываемого файла (значение по умолчанию), `false` -- будет скачиваться полностью подписываемый файл (устаревшее поведение).
 +
