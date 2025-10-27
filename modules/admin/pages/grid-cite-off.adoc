@@ -3,13 +3,13 @@
 В исключительных случаях большое количество файлов с цитатами может вызывать ошибки при поиске. Когда использование цитат отключено, поиск в режиме ленты будет работать аналогично режиму грида (без цитат).
 
 .Чтобы отключить использование цитат:
-. Задайте настройку в БД при помощи скрипта. Значение `false` -- настройка отключена, цитаты отображаются (значение по умолчанию); `true` -- настройка включена, цитаты не отображаются:
+. Задайте настройку в БД при помощи скрипта. Значение `0` (MSSQL) или `false` (PGSQL) -- настройка отключена, цитаты отображаются (значение по умолчанию); `1` (MSSQL) или `true` (PGSQL) -- настройка включена, цитаты не отображаются:
 +
 .Для {mssql}:
 [source,sql]
 ----
-DECLARE true bit =1
-EXEC dvsys_setting_set N'DisableSearchCitations', true
+DECLARE @On bit =1
+EXEC dvsys_setting_set N'DisableSearchCitations', @On
 ----
 +
 .Для {pgsql}:
@@ -24,8 +24,8 @@ select * from dvsys_setting_set('DisableSearchCitations', true);
 .Для {mssql}:
 [source,sql]
 ----
-DECLARE false bit =1
-EXEC dvsys_setting_set N'DisableSearchCitations', false
+DECLARE @On bit =0
+EXEC dvsys_setting_set N'DisableSearchCitations', @On
 ----
 +
 .Для {pgsql}:
