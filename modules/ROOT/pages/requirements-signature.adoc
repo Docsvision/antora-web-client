@@ -31,7 +31,7 @@ include::user:partial$excerpts.adoc[tags=signature]
 .Требования к серверу (проверка):
 . Требуются компоненты КриптоПро CSP {csp-v}.
 . Не требуются КриптоПро TSP Client и КриптоПро OCSP Client.
-. Не требуется лицензия на КриптоПро TSP Client, КриптоПро OCSP Client и КриптоПро CSP {csp-v}.
+. Требуется лицензия на КриптоПро TSP Client, КриптоПро OCSP Client и КриптоПро CSP {csp-v}.
 
 .Требования к клиентским рабочим местам (формирование):
 . Операционная система: Windows или Mac OS.
