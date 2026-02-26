@@ -4,7 +4,7 @@
 
 Ниже приведены минимальные аппаратные требования сервера {dv}.
 
-include::6.1@platform:ROOT:partial$summingRequirements.adoc[]
+include::dev@platform:ROOT:partial$summingRequirements.adoc[]
 
 .Минимальные требования в зависимости от предполагаемого числа одновременно работающих пользователейfootnote:[Подразумеваются пользователи с активной сессией. Время активности может быть настроено администратором.]:
 [cols="26%,74%",options="header"]

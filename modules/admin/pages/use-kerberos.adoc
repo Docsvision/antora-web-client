@@ -2,4 +2,4 @@
 
 Прозрачная аутентификация Kerberos позволяет выполнять вход от имени УЗ текущего пользователя (если он зарегистрирован в справочнике сотрудников). Необходимые настройки описаны в руководстве по настройке системы, см. раздел "xref:engineer:ROOT:kerberos-authentication.adoc[]".
 
-include::6.1@winclient:user:partial$excerpts.adoc[tags=ald-no-win]
+include::dev@winclient:user:partial$excerpts.adoc[tags=ald-no-win]

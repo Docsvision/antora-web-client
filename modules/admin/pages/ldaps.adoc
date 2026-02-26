@@ -4,4 +4,4 @@
 
 NOTE: Для использования LDAPS с Active Directory требуется модуль {pl} версии {cu253-pl-req} и модуль {wc} версии {cu253-wc-req}.
 
-include::6.1@platform:admin:ldaps-ad.adoc[tags=settings]
+include::dev@platform:admin:ldaps-ad.adoc[tags=settings]
