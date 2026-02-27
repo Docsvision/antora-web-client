@@ -46,6 +46,7 @@
 *** xref:cards-favorite.adoc[]
 *** xref:cards-management-console.adoc[]
 *** xref:cards-archive.adoc[]
+*** xref:control-validation.adoc[]
 // **** xref:.cards-duplicate.adoc[]
 ** xref:search.adoc[]
 ** xref:docs.adoc[]
