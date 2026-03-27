@@ -8,10 +8,14 @@
 ArchiveManagement Карточки::
 Группа локаций библиотеки модуля _{am}_.
 +
-include::user:partial$excerpts.adoc[tags=noam]
+include::6.1@archivemgmt:admin:install.adoc[tags=noam]
 +
 BackOffice Карточки:: Группа локаций библиотеки карточек _{bo}_, включает локации карточек приложения _{dm}_ и др. приложений, основанных на карточках данной библиотеки карточек.
+
 TakeOffice Карточки:: Группа локаций библиотеки карточек _{to}_.
++
+include::partial$excerpts.adoc[tags=no-to]
+
 ApprovalDesigner Карточки:: Группа локаций библиотеки карточек _{ad}_.
 Workflow Карточки:: Группа локаций библиотеки карточек _{wf}_.
 +

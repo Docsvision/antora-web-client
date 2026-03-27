@@ -2,34 +2,23 @@
 
 == Требования к серверу
 
-[#linux]
-.Сервер {dv} работает под управлением Linux:
-* Astra Linux Special Edition {l-1}.
-* Astra Linux Special Edition {l-1-1}.
-+
+include::dv6@install-linux:ROOT:requirements-software.adoc[tags=oslist]
+
 include::partial$excerpts.adoc[tags=preview]
-+
-* {l-2}.
 
 [#windows]
-.Машина с Windows необходима для работы с Консолью настройки {dv} и {wincl}ом:
-* Microsoft Windows Server {serv-1}.
-* Microsoft Windows Server {serv-2}.
-* Microsoft Windows Server {serv-3}.
-* Microsoft Windows Server {serv-4}.
+include::dv6@install-linux:ROOT:requirements-software.adoc[tags=winlist]
 
 .Программное обеспечение:
 // * IIS версий {iis}. Должны быть включены компоненты IISfootnote:[Устанавливаются с помощью menu:Диспетчера серверов[Роли и компоненты].]: ASP.NET, HTTP Redirect, Application Initialization.
 * {asp-bundle}.
-// * Microsoft .NET Framework {net-v1}.
+// tag::simple[]
+* xref:engineer:ROOT:java-service.adoc[Криптосервис обслуживания ЭП] необходим для проверки всех подписей и формирования CAdES-BES и CAdES-X Long Type 1.
+// end::simple[]
 
 [#r7office]
-.Для использования функций *предпросмотра* и *автоконсолидации*:
+.Для работы функций *предпросмотра* и *автоконсолидации*:
 * https://r7-office.ru/downloadserver_doc[Р7-Офис. Сервер документов]/OnlyOffice, подробнее см. в документации по администрированию модуля "xref:admin:preview-r7.adoc[]".
-
-.Для использования простой ЭП:
-* КриптоПро CSP версии {csp-v}.
-* xref:engineer:ROOT:java-service.adoc[Криптосервис обслуживания ЭП] для проверки и формирования простой подписи и подписей CAdES-BES и CAdES-X Long Type 1.
 
 [#browser]
 == Требования к клиентским рабочим местам
@@ -41,11 +30,13 @@ include::partial$excerpts.adoc[tags=preview]
 * {yandex} (для ОС Windows).
 * {safari}.
 
-// [#autoconsolidation]
-// .Для использования функции автоконсолидации:
-// . Microsoft Word {word}.
+[#files]
+.Для открытия файлов, приложенных к карточкам:
+* Любой иной офисный пакет -- для использования функции автоконсолидации.
+* DVWebTool или DVSupService.
 
-// .Для работы программы _DVWebTool_:
+.Для работы DVWebTool и DVSupService:
+* {asp-bundle} и выше.
 // . Microsoft .NET Framework {net-v1}.
 // . Операционная система Microsoft Windows {win}.
 // . xref:requirements-signature.adoc[Программное обеспечение для формирования усиленной подписи].
