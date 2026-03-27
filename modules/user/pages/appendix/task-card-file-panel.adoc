@@ -20,12 +20,12 @@ image::6.1_GBL-3828@webclient:user:task-file-panel-empty.png[Файловая п
 * Элемент управления при просмотре карточки:
 +
 ."Файловая панель" при просмотре карточки "Задание"
-image::6.1_GBL-3828@webclient:user:task-file-panel-empty-read.png["Файловая панель" при просмотре карточки "Задание"]
+image::6.1_GBL-3828@webclient:user:task-file-panel-empty-read.png[&quot;Файловая панель&quot; при просмотре карточки &quot;Задание&quot;]
 
 * Элемент управления с добавленными файлами при просмотре карточки:
 +
 ."Файловая панель" с добавленными файлами в карточке "Задание"
-image::6.1_GBL-3828@webclient:user:task-file-panel-view.png["Файловая панель" с добавленными файлами в карточке "Задание"]
+image::6.1_GBL-3828@webclient:user:task-file-panel-view.png[&quot;Файловая панель&quot; с добавленными файлами в карточке &quot;Задание&quot;]
 
 [#addFiles]
 == Добавление файлов

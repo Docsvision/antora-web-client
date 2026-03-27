@@ -17,3 +17,6 @@ image::create-new-card-window.png[Создание карточки]
 * xref:6.1_GBL-3828@documentmgmt:user-web:docs-new.adoc[Ввод документа в систему]:
 * xref:6.1_GBL-3828@documentmgmt:user-web:tasks-new.adoc[Создание задания];
 * xref:6.1_GBL-3828@documentmgmt:user-web:task-groups-new.adoc[Создание группы заданий].
+
+NOTE: Обратите внимание, что в случае принудительного закрытия браузера (например, при завершении работы ОС) с открытыми и несохранёнными карточками документов, их черновики будут сохранены в {wincl}е.
+
