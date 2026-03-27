@@ -1,6 +1,11 @@
-// tag::wc-version[]
-Пример рассчитан на версию {wc}а {page-version} или выше.
-// end::wc-version[]
+// tag::address-in-win[]
+Убедитесь, что в {wincl}е указан _Адрес сервера {wc}а_, см. подробнее в разделе "xref:6.1@winclient:admin:system-settings.adoc#additional[Системные настройки модуля {wincl}]".
+// end::address-in-win[]
+
+// tag::plugin[]
+.. Если расширение плагина имеется в списке установленных, но отключёно, необходимо самостоятельно включить его в браузере.
+.. Если расширение отсутствует в списке или недоступно в магазине приложений, вы можете установить расширение, воспользовавшись https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/467/0/ustnovk-rsshirenija-dlja-plgin-iz-fjjl[инструкцией] на сайте КриптоПро. Вы также можете продолжить работу с электронной подписью в браузерах https://cryptopro.ru/products/chromium-gost[Chromium-Gost] или https://browser.yandex.ru/b/cryptopro_plugin[Яндекс Браузер] с полной поддержкой необходимой функциональности.
+// end::plugin[]
 
 // tag::vscode[]
 * Microsoft https://www.visualstudio.com/[Visual Studio] {vscode-v}.
@@ -14,7 +19,7 @@
 // end::wc-node[]
 
 // tag::preview[]
-WARNING: Установка Р7-сервер для использования xref:admin:preview-r7.adoc[функции предварительного просмотра] требует минимальной версии 1.7.3.
+WARNING: При установке Р7-сервер для использования xref:admin:preview-r7.adoc[функции предварительного просмотра] на Astra Linux требуется минимальная версия 1.7.3.
 // end::preview[]
 
 //tag::dv-web-launch[]
@@ -32,5 +37,8 @@ WARNING: Установка Р7-сервер для использования x
 // end::versions[]
 
 // tag::n-6[]
-{wc} версии {page-version} работает на .NET 6.0 с возможностью установки на ОС Astra Linux, поэтому при переходе с версии 5.5.17 и ниже необходимо также перевести на .NET 6.0 собственные решения. Подробнее см. "xref:net6.adoc[]".
+Начиная с версии {cu253-mc-req}, {wc} работает на .NET 8.0, поэтому при переходе с {wc}, использующего .NET предыдущих версий, необходимо перевести на .NET 8.0 собственные решения.
+ifndef::proger[]
+Подробнее см. "xref:dv6@programmer:WebClient:net6.adoc[]".
+endif::proger[]
 // end::n-6[]
