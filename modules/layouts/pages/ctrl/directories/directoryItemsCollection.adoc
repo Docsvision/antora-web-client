@@ -88,7 +88,6 @@ include::partial$properties.adoc[tags=byTab]
 
 include::partial$properties.adoc[tags=icon]
 
-[#edit-mode]
 include::partial$properties.adoc[tags=editMode]
 
 В зависимости от выбранного режима редактирования ЭУ отображается по-разному. См. подробнее "xref:user:appendix/directory-items-collection.adoc[]" в руководстве пользователя.
