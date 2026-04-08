@@ -13,6 +13,7 @@ include::partial$properties.adoc[tags=general]
 
 === Внешний вид
 
+:foldergrid:
 include::partial$properties.adoc[tags=switch]
 
 include::partial$excerpts.adoc[tags=separate]
