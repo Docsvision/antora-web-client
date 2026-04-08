@@ -123,4 +123,4 @@ image::collection-search-quick.png[Быстрый поиск по записям
 .Поиск в ЭУ "Записи справочников"
 image::collection-search-full.png[Поиск в ЭУ "Записи справочников"]
 
-Если также задан параметр "xref:layouts:ctrl/directories/directoryItemsCollection.adoc#fields-for-search[Поля для поиска]", поиск будет осуществляться по указанным в нём полям (поле из свойства `*Отображаемое поле*` в поиске участвовать не будет).
+Если также задан параметр "xref:layouts:ctrl/directories/directoryItemsCollection.adoc#field-for-search[Поле для поиска]", поиск будет осуществляться по указанным в нём полям (поле из свойства `*Отображаемое поле*` в поиске участвовать не будет).
