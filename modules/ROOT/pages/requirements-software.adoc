@@ -12,6 +12,7 @@
 . IIS версий {iis}. Должны быть включены компоненты IISfootnote:[Устанавливаются с помощью menu:Диспетчера серверов[Роли и компоненты].]: ASP.NET, HTTP Redirect, Application Initialization.
 . {asp}.
 . Microsoft .NET Framework {net-v1}.
+. Для работы функций *предпросмотра* и *автоконсолидации* потребуется https://r7-office.ru/downloadserver_doc[Р7-Офис. Сервер документов]/OnlyOffice с соответствующей лицензией, подробнее см. в документации по администрированию модуля "xref:admin:preview-r7.adoc[]".
 
 [#browser]
 == Требования к клиентским рабочим местам
