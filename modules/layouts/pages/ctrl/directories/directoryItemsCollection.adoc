@@ -99,3 +99,37 @@ include::partial$properties.adoc[tags=editMode]
 В зависимости от выбранного режима редактирования ЭУ отображается по-разному. См. подробнее "xref:user:appendix/directory-items-collection.adoc[]" в руководстве пользователя.
 
 include::partial$properties.adoc[tags=stdCss]
+
+=== События
+
+include::partial$properties.adoc[tags=afterDirectoryWindowClosed]
+
+include::partial$properties.adoc[tags=directoryWindowOpened]
+
+include::partial$properties.adoc[tags=searchResultsLoaded]
+
+include::partial$properties.adoc[tags=beforeDirectoryWindowClosed]
+
+include::partial$properties.adoc[tags=beforeDirectoryWindowOpened]
+
+include::partial$properties.adoc[tags=beforeSearchResultsLoaded]
+
+include::partial$properties.adoc[tags=focusLoose]
+
+include::partial$properties.adoc[tags=onClick]
+
+include::partial$properties.adoc[tags=dataChanged]
+
+include::partial$properties.adoc[tags=afterEditWindowClosed]
+
+include::partial$properties.adoc[tags=beforeEditWindowClosed]
+
+include::partial$properties.adoc[tags=afterEditWindowOpened]
+
+include::partial$properties.adoc[tags=beforeEditWindowOpened]
+
+include::partial$properties.adoc[tags=focusGet]
+
+include::partial$properties.adoc[tags=mouseOver]
+
+include::partial$properties.adoc[tags=mouseAway]
