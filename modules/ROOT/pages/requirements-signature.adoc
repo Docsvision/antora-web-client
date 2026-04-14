@@ -17,7 +17,7 @@ WARNING: Для работы с электронной подписью необ
 Дополнительная информация по настройке подписания и шифрования приведена в разделе "xref:5.5.5@backoffice:admin:system-settings.adoc#signature-cypher[Руководстве администратора модуля {bo}]".
 ====
 +
-* КриптоПро https://www.cryptopro.ru/products/mydss2#law[myDSS 2.0] или https://www.cryptopro.ru/products/dss/mobile/dssclient[DSS Client] для работы с подписью xref:user:docs-sign.adoc#mobile[на мобильных устройствах].
+* КриптоПро https://www.cryptopro.ru/products/mydss2#law[myDSS 2.0] или https://www.cryptopro.ru/products/dss/mobile/dssclient[DSS Client] для работы с облачной подписью xref:user:docs-sign.adoc#mobile[на мобильных устройствах].
 
 Набор необходимых компонентов для работы с подписью зависит от типа подписи. Далее перечислены требования для формирования и проверки усиленной и усовершенствованной подписи со стандартным (не облачным) сертификатом. См. также xref:5.5.5@backoffice::requirements.adoc#crypto-pro[требования для модуля "{bo}"].
 
