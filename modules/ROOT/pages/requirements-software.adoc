@@ -2,23 +2,30 @@
 
 == Требования к серверу
 
+.В кросс-платформенной версии {dv} сервер может работать под управлением следующих ОС:
 include::dv6@install-linux:ROOT:requirements-software.adoc[tags=oslist]
 
 include::partial$excerpts.adoc[tags=preview]
 
 [#windows]
-include::dv6@install-linux:ROOT:requirements-software.adoc[tags=winlist]
+include::dv6@install-linux:ROOT:partial$excerpts.adoc[tags=winlist]
 
 .Программное обеспечение:
 // * IIS версий {iis}. Должны быть включены компоненты IISfootnote:[Устанавливаются с помощью menu:Диспетчера серверов[Роли и компоненты].]: ASP.NET, HTTP Redirect, Application Initialization.
 * {asp-bundle}.
 // tag::simple[]
-* xref:engineer:ROOT:java-service.adoc[Криптосервис обслуживания ЭП] необходим для проверки всех подписей и формирования CAdES-BES и CAdES-X Long Type 1.
+* Только для сервера под управлением Linux:
+** xref:engineer:ROOT:java-service.adoc[Криптосервис] необходим для проверки всех подписей и формирования CAdES-BES и CAdES-X Long Type 1.
+* {blank}
++
+// tag::ifwinstamp[]
+Если сервер {dv} работает под управлением Windows, проверка и формирование подписи работает без криптосервиса и лицензии на него, но в таком случае xref:6.1@webclient:user:docs-sign.adoc#advanced-info[отображение штампа времени] будет недоступно.
+// end::ifwinstamp[]
 // end::simple[]
 
 [#r7office]
 .Для работы функций *предпросмотра* и *автоконсолидации*:
-* https://r7-office.ru/downloadserver_doc[Р7-Офис. Сервер документов]/OnlyOffice, подробнее см. в документации по администрированию модуля "xref:admin:preview-r7.adoc[]".
+* https://r7-office.ru/downloadserver_doc[Р7-Офис. Сервер документов]/OnlyOffice с соответствующей лицензией, подробнее см. в документации по администрированию модуля "xref:admin:preview-r7.adoc[]".
 
 [#browser]
 == Требования к клиентским рабочим местам
