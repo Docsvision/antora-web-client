@@ -19,16 +19,28 @@ include::partial$table.adoc[]
 include::partial$solutions-db.adoc[]
 
 |_Решения_
-|Список _решений_, которые загружены в выбранную БД.
+|Список решений, которые загружены в выбранную БД.
 
 |*Импортировать решение*
-|Импортирует в БД _решение_ из файла XML. Расположение стандартных _решений_: `{wcd-lin}/LayoutSolutions/`.
+a|Импортирует в БД решение из файла XML. Расположение стандартных решений: `{wcd-lin}/LayoutSolutions/`.
+
+[NOTE]
+====
+[subs="specialchars,attributes,quotes"]
+В {wc}е версии {wc-cu-mc} и выше расположение стандартных решений изменено: {solutions}.
+====
 
 |*Импортировать стандартные решения*
-|Импортирует в БД все _решения_ из папки `{wcd-lin}/LayoutSolutions/`.
+a|Импортирует в БД все решения из папки `{wcd-lin}/LayoutSolutions/`.
+
+[NOTE]
+====
+[subs="specialchars,attributes,quotes"]
+В {wc}е версии {wc-cu-mc} и выше расположение стандартных решений изменено: {solutions}.
+====
 
 |*Удалить*
-|Удаляет выбранное _решение_ из базы данных.
+|Удаляет выбранное решение из базы данных.
 |===
 
 [WARNING]
@@ -63,8 +75,22 @@ _Решения_ загружаются только в выбранную БД.
 . Выберите файл с данными _решения_:
 +
 --
-* _Базовое решение_. Расположено в каталоге `C:/Program Files (x86)/Docsvision/WebClient/LayoutSolution/LayoutSolutionsDocsvision.BackofficeSolution.xml`. Содержит разметки и условия выбора *типа* карточек Документ.
-* Решение _{dm}_. Расположено в каталоге. `C:/Program Files (x86)/Docsvision/WebClient/LayoutSolution/LayoutSolutionsDocsvision.DocumentManagementSolution.xml`. Содержит разметки и условия выбора стандартных *видов* карточек Документ приложения _{dm}_.
+* _Базовое решение_. Содержит разметки и условия выбора *типа* карточек Документ. Расположено в каталоге `{wcd-lin}/LayoutSolutions/LayoutSolutionsDocsvision.BackofficeSolution.xml`.
++
+[NOTE]
+====
+[subs="specialchars,attributes,quotes"]
+В {wc}е версии {wc-cu-mc} и выше расположение стандартных решений изменено: {solutions}.
+====
++
+* Решение _{dm}_. Содержит разметки и условия выбора стандартных *видов* карточек Документ приложения _{dm}_. Расположено в каталоге. `{wcd-lin}/LayoutSolutions/LayoutSolutionsDocsvision.DocumentManagementSolution.xml`.
++
+[NOTE]
+====
+[subs="specialchars,attributes,quotes"]
+В {wc}е версии {wc-cu-mc} и выше расположение стандартных решений изменено: {solutions}.
+====
++
 * Файл собственного _решения_.
 --
 +
