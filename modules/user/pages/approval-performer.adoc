@@ -44,7 +44,7 @@ NOTE: Особенности формирования версий файлов 
 Добавить согласующих::
 Добавляет новых участников в согласование. Инструкция по работе с дополнительными согласующими приведена в xref:approval-additional-approvers.adoc[Дополнительные согласующие].
 
-include::GBL-4821@approval:user:partial$excerpts.adoc[tags=more-approvers]
+include::5.5.3@approval:user:partial$excerpts.adoc[tags=more-approvers]
 
 Результат согласования будет отображен в компоненте _Ход согласования_.
 ****
