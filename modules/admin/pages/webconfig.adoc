@@ -108,11 +108,11 @@ include::webservices-port.adoc[tags=webconfig]
 == Настройки аутентификации
 
 [#auth-ad]
-=== {wc} в сети без Active Directory
+=== Автоматическая подстановка домена при входе
 
-include::no-active-dir.adoc[tags=webconfig]
+include::default-domain.adoc[tags=webconfig]
 
-Подробнее см. "xref:no-active-dir.adoc[]".
+Подробнее см. "xref:default-domain.adoc[]".
 
 // [#auth-page]
 // === Настройки страницы входа

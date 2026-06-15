@@ -7,7 +7,7 @@
 **** xref:settings-simple.adoc[]
 **** xref:settings-extended.adoc[]
 *** xref:install-after.adoc[]
-**** xref:no-active-dir.adoc[]
+**** xref:default-domain.adoc[]
 *** xref:install-layout-designer.adoc[]
 
 ** xref:update.adoc[]
