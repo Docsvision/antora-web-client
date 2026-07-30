@@ -63,6 +63,13 @@ include::max-preview-size.adoc[tags=webconfig]
 
 Подробнее см. "xref:max-preview-size.adoc[]".
 
+[#session-recreation]
+=== Повторное создание сессий при длительных запросах
+
+include::session-recreation.adoc[tags=webconfig]
+
+Подробнее см. "xref:session-recreation.adoc[]".
+
 [#look]
 == Настройки внешнего вида
 
