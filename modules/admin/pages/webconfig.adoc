@@ -68,6 +68,8 @@ include::max-preview-size.adoc[tags=webconfig]
 
 include::session-recreation.adoc[tags=webconfig]
 
+include::session-recreation.adoc[tags=webconfig-1]
+
 Подробнее см. "xref:session-recreation.adoc[]".
 
 [#look]
