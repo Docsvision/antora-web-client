@@ -1,3 +1,6 @@
 = Дело
 
-Элемент управления `_Дело_` предназначен для списания текущего документа в выбранное дело _Справочника номенклатуры дел_, см. подробнее в документации модуля {am}: "xref:archivemgmt:layouts:ctrl/nomenclatureOfCases/archiveCase.adoc[]".
+Элемент управления `_Дело_` предназначен для списания текущего документа в выбранное дело _Справочника номенклатуры дел_, см. подробнее в документации модуля {am}:
+
+* 5.5.1: "xref:5.5.1@archivemgmt:layouts:ctrl/nomenclatureOfCases/archiveCase.adoc[]"
+* 5.5.2: "xref:5.5.2@archivemgmt:layouts:ctrl/nomenclatureOfCases/archiveCase.adoc[]"
