@@ -53,6 +53,7 @@
 *** xref:log.adoc[]
 **** xref:log-config.adoc[]
 **** xref:log-router.adoc[]
+**** xref:log-audit.adoc[]
 *** xref:performance-counters.adoc[]
 **** xref:counter-monitor.adoc[]
 *** xref:sessions.adoc[]
