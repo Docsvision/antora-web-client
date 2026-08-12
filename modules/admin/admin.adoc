@@ -38,6 +38,7 @@
 **** xref:login-animation.adoc[]
 **** xref:user-guide-location.adoc[]
 **** xref:user-agent.adoc[]
+**** xref:session-recreation.adoc[]
 *** xref:grid-aggregate.adoc[]
 **** xref:grid-cite-off.adoc[]
 *** xref:diagrams.adoc[]

@@ -63,6 +63,15 @@ include::max-preview-size.adoc[tags=webconfig]
 
 Подробнее см. "xref:max-preview-size.adoc[]".
 
+[#session-recreation]
+=== Повторное создание сессий при длительных запросах
+
+include::session-recreation.adoc[tags=webconfig]
+
+include::session-recreation.adoc[tags=webconfig-1]
+
+Подробнее см. "xref:session-recreation.adoc[]".
+
 [#look]
 == Настройки внешнего вида
 
@@ -86,6 +95,25 @@ include::main-menu-fix.adoc[tags=webconfig]
 include::hide-sidebar.adoc[tags=webconfig]
 
 Подробнее см. "xref:hide-sidebar.adoc[]".
+
+[#hide-user-avatars]
+== Скрытие фото сотрудников
+
+.Чтобы скрыть фотографии сотрудников:
+. Откройте конфигурационный файл `{webconfig-win}`.
+. Перейдите к секции {setgroups-wc}.
+. Измените значение параметра *_HideUserAvatars_*:
++
+[source]
+----
+<SettingGroup Name="WebClient">
+    <Setting Name="HideUserAvatars" Value="true" /> <.>
+</SettingGroup>
+----
+<.> `HideUserAvatars`:
++
+* *_false_* -- фотографии сотрудников не скрываются (значение по умолчанию).
+* *_true_* -- фотографии сотрудников скрыты, во всех элементах интерфейса вместо фотографий сотрудников отображаются xref:layouts:guide-layouts-user-profile.adoc#edit[изображения по умолчанию].
 
 [#dvweb]
 == Настройки DVWebtool
