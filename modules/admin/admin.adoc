@@ -74,6 +74,7 @@
 *** xref:user-login.adoc[]
 *** xref:experiment-enable.adoc[]
 *** xref:webconfig.adoc[]
+*** xref:attributes-localization.adoc[]
 ** xref:more-settings.adoc[]
 *** xref:connect-https.adoc[]
 *** xref:ldaps.adoc[]
