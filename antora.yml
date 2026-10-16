@@ -1,6 +1,6 @@
 name: webclient
-version: '6.1'
-prerelease: false
+version: 'GBL-3610'
+prerelease: true
 title: Web-клиент
 asciidoc:
   attributes:
@@ -31,6 +31,7 @@ asciidoc:
     wc-group-save-req: 'версии 6.1, сборка 1311'
     no-root-since: '{wc-no-root-since}'
     hash-rq: 'сборка 909 и выше'
+    log-wc: '`/var/log/docsvision/webclient/webclient.log` для Linux и `C:\ProgramData\Docsvision\WebClient\WebClient.log` для Windows'
 nav:
 - modules/ROOT/nav.adoc
 - modules/common/common.adoc

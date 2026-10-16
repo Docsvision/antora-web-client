@@ -1,79 +1,173 @@
-= Настройка журналирования
+:of-what: {wc}а
+:version: {new-log-req}
+:webclient: trushno
 
-События {wc}а протоколируются с помощью компонента NLog (http://nlog-project.org).
+= Журналирование {wc}а
 
-include::partial$nlog.adoc[]
+include::GBL-3610@engineer:ROOT:partial$excerpts.adoc[tags=nlog-json]
 
-// Базовые настройки журналирования представлены в панели управления (xref:..control-panel-webc.adoc[Раздел "WebClient"]).
-Расширенные настройки журналирования осуществляются в конфигурационном файле {wc}а.
+[subs="specialchars,attributes,quotes"]
+По умолчанию основной журнал {wc}а записывается в файл {log-wc}.
+
+Диагностические журналы параметров производительности сохраняются отдельно в формате `.tsv`. В приведённой ниже конфигурации `NLog` цели и правила для них уже настроены. Чтобы включить диагностическое журналирование, задайте параметр `EnableDiagnosticsLogger` и используйте запросы из раздела "xref:log-config.adoc#advanced-logging[Расширенное журналирование]".
+
+[#config]
+== Настройка журналирования
 
 include::partial$excerpts.adoc[tags=ifabsent]
 
 // tag::webconfig[]
+.Чтобы изменить настройки:
 . Откройте конфигурационный файл `{webconfig-lin}` в Linux и `{webconfig-cp}` в Windows.
-. Измените параметры журналирования в параметрах `targets` и `rules`.
+. Отредактируйте параметры в секции `NLog`. Чтобы журналирование велось в формате JSON, задайте параметры в секции `variables`.
 +
+.Фрагмент конфигурационного файла {wc}а:
 [source,json]
 ----
 {
- "NLog": {
-     "throwConfigExceptions": false,
-     "extensions": [
-         { "assembly": "NLog.Extensions.Logging" },
-         { "assembly": "NLog.Web.AspNetCore" }
-     ],
-     "targets": {
-         "async": true,
-         "logFile": {
-             "type": "File",
-             "fileName": "${basedir}/../Logs/WebClient${event-properties:item=Tenant} PID ${processId} ${shortdate}.log", <.>
-             "layout": "[${longdate}][${level}][${callsite}] ${message} ${onexception:${newline}${exception:maxInnerExceptionLevel=10:format=shortType,message,stacktrace:separator=*:innerExceptionSeparator=&#xD;&#xA;&#x9;}}"
-         },
-         "logConsole": {
-             "type": "Console"
-         }
-     },
-     "rules": [ <.>
-         {
-             "logger": "Microsoft.*",
-             "maxLevel": "Info",
-             "final": true
-         },
-         {
-             "logger": "*",
-             "minLevel": "Error",
-             "writeTo": "logFile" <.>
-         },
-         {
-             "logger": "*",
-             "minLevel": "Trace",
-             "writeTo": "logConsole" <.>
-         }
-     ]
- }
+  "NLog": {
+    "throwConfigExceptions": false, <.>
+    "extensions": [ <.>
+      { "assembly": "NLog.Extensions.Logging" },
+      { "assembly": "NLog.Web.AspNetCore" },
+      { "assembly": "DocsVision.WebClient" }
+    ],
+    "variables": { <.>
+      "fileLogLevel": "Error", <.>
+      "consoleLogLevel": "Error", <.>
+      "enableFileLogging": "true", <.>
+      "enableConsoleLogging": "true", <.>
+      "jsonLayout": { <.>
+        "type": "JsonLayout", <.>
+        "includeAllProperties": true, <.>
+        "attributes": [ <.>
+          {
+            "name": "timestamp", <.>
+            "layout": "${date:format=yyyy-MM-dd HH\\:mm\\:ss.fff}" <.>
+          },
+          {
+            "name": "level",
+            "layout": "${level:upperCase=true}"
+          },
+          {
+            "name": "module",
+            "layout": "${logger}"
+          },
+          {
+            "name": "message",
+            "layout": "${message:withException=true}" <.>
+          },
+          {
+            "name": "processId",
+            "layout": "${processid}"
+          }
+        ]
+      }
+    },
+    "targets": { <.>
+      "async": true, <.>
+      "logFile": { <.>
+        "type": "File", <.>
+        "fileName": "${gdc:docsvisionLogFolder}/${gdc:moduleName}/${gdc:moduleName}.log", <.>
+        "layout": "${var:jsonLayout}", <.>
+        "archiveEvery": "Day", <.>
+        "archiveAboveSize": 314572800, <.>
+        "archiveFileName": "${gdc:docsvisionLogFolder}/${gdc:moduleName}/archives/${gdc:moduleName} {#}.log", <.>
+        "archiveNumbering": "DateAndSequence", <.>
+        "archiveDateFormat": "yyyy-MM-dd", <.>
+        "maxArchiveFiles": 30, <.>
+        "createDirs": true <.>
+      },
+      "logConsole": { <.>
+        "type": "Console",
+        "layout": "${var:jsonLayout}"
+      },
+      "diagnosticsLogWebClient": { <.>
+        "type": "File",
+        "fileName": "${gdc:docsvisionLogFolder}/${gdc:moduleName}/DiagnosticsLogWebClient${event-properties:item=Tenant} PID ${processId} ${shortdate}.tsv"
+      },
+      "diagnosticLogStorageServer": { <.>
+        "type": "File",
+        "fileName": "${gdc:docsvisionLogFolder}/${gdc:moduleName}/DiagnosticLogStorageServer${event-properties:item=Tenant} PID ${processId} ${shortdate}.tsv"
+      }
+    },
+    "rules": [ <.>
+      {
+        "logger": "Microsoft.*",
+        "maxLevel": "Warn",
+        "final": true
+      },
+      {
+        "logger": "DiagnosticsLogWebClient",
+        "minLevel": "Trace",
+        "writeTo": "diagnosticsLogWebClient",
+        "final": true <.>
+      },
+      {
+        "logger": "DiagnosticLogStorageServer",
+        "minLevel": "Trace",
+        "writeTo": "diagnosticLogStorageServer",
+        "final": true
+      },
+      {
+        "logger": "*",
+        "minLevel": "${when:when='${var:enableFileLogging:lowercase=true}' == 'true':inner=${var:fileLogLevel}:else=Off}",
+        "writeTo": "logFile"
+      },
+      {
+        "logger": "*",
+        "minLevel": "${when:when='${var:enableConsoleLogging:lowercase=true}' == 'true':inner=${var:consoleLogLevel}:else=Off}",
+        "writeTo": "logConsole"
+      }
+    ]
+  }
 }
 ----
-<.> Измените значение параметра `fileName`, чтобы настроить путь для сохранения журнала работы: +
-В `fileName` можно использовать https://github.com/nlog/NLog/wiki/File-target[допустимые для NLog переменные], например: `\Logs\$\{level}\WebClient_$\{shortdate}.log`.
+<.> `throwConfigExceptions` -- определяет поведение приложения при обнаружении ошибок в конфигурации NLog.
 +
-<.> Измените значение параметров `minLevel` и `maxLevel`, например, на `trace`, чтобы включить протоколирование всех типов событий. +
+Если параметр установлен в `true`, любая ошибка в конфигурации вызовет исключение.
++
+<.> `extensions` -- загружает дополнительные сборки (`.dll`), расширяющие возможности NLog.
+<.> `variables` -- раздел определяет параметры, которые используются в других частях конфигурации.
+<.> `fileLogLevel` -- задаёт уровень журналирования для файла журнала.
+<.> `consoleLogLevel` -- задаёт уровень журналирования для консоли (stdout/stderr).
+<.> `enableFileLogging` -- включает или отключает ведение журнала в файл.
+<.> `enableConsoleLogging` -- включает или отключает ведение журнала в консоль (stdout/stderr).
+<.> `jsonLayout` -- определяет JSON-структуру сообщений журнала.
+<.> `type` -- указывает на использование JSON-макета.
+<.> `includeAllProperties` -- регулирует, будут ли добавляться в вывод все дополнительные свойства, переданные в контексте журналирования.
+<.> `attributes` -- раздел с парными параметрами вида `"name"`/`"layout"`, определяющий поля JSON.
+<.> `name` -- значение `timestamp` добавляет отметку времени.
+<.> `layout` -- значение `$&#123;date:format=yyyy-MM-dd HH\\:mm\\:ss.fff&#125;` задаёт формат отображения времени.
+<.> `layout` -- значение `$&#123;message:withException=true&#125;` добавляет сведения об исключении к тексту сообщения.
+<.> `targets` -- настройки режимов журналирования.
+<.> `async` -- регулирует асинхронную обработку целей, указанных в этом блоке. Журналирование выполняется в фоновом режиме, не блокируя работу системы, что повышает производительность при высокой нагрузке.
+<.> `logFile` -- настройки для режима вывода журнала в файл.
+<.> `type` -- указывает на использование файла.
+<.> `fileName` -- формирует шаблон имени файла, в параметре можно использовать https://github.com/nlog/NLog/wiki/File-target[допустимые для NLog переменные].
+<.> `layout` -- ссылка на общий JSON-формат, определённый в `jsonLayout`.
+<.> `archiveEvery` -- создавать новый архивный файл каждый заданный период, по умолчанию -- каждый день.
+<.> `archiveAboveSize` -- если текущий файл превышает `300` Мб (значение по умолчанию), он будет немедленно архивирован, даже если заданный в `archiveEvery` период не завершился.
+<.> `archiveFileName` -- шаблон имени для архивов, `&#123;#&#125;` заменяется на номер архива.
+<.> `archiveNumbering` -- значение `DateAndSequence` задаёт нумерацию архивов по дате и порядковому номеру (например, `MyLog 2026-09-09 1.log`).
+<.> `archiveDateFormat` -- задаёт формат даты, которая подставляется в имя архивного файла при архивации журнала.
+<.> `maxArchiveFiles` -- максимальное количество архивных файлов, после которого старые файлы будут удаляться. По умолчанию -- `30`.
+<.> `createDirs` -- флаг регулирует автоматическое создание каталогов журналов. Каталоги будут создаваться автоматически, когда флаг в значении `true`.
+<.> `logConsole` -- настройки для режима вывода журнала в stdout/stderr процесса, например _journald_ в терминале Linux. Формат -- тот же JSON, что и для файла.
+<.> `diagnosticsLogWebClient` -- настройки файла диагностического журнала запросов {wc}а. Журнал сохраняется в формате TSV.
+<.> `diagnosticLogStorageServer` -- настройки файла диагностического журнала запросов к службе Сервера {dv}. Журнал сохраняется в формате TSV.
+<.> `rules` -- правила журналирования. Определяют, какой логгер (`logger`), с каким уровнем (`minLevel`, `maxLevel`) и в каком режиме (`writeTo`) будет писать сообщения.
++
 Допустимые уровни протоколирования приведены https://github.com/nlog/NLog/wiki/Configuration-file#log-levels[на странице NLog в GitHub]. +
-Для получения дополнительной информации о других настройках NLog обратитесь к документации по данной платформе.
-<.> Настройки журнала {wc}а.
-<.> Настройки журнала {pu}.
-// end::webconfig[]
+Дополнительная информация о прочих настройках NLog приводится в документации по данной платформе.
+<.> `final` -- значение `true` в правилах `DiagnosticsLogWebClient` и `DiagnosticLogStorageServer` прекращает обработку диагностических сообщений последующими правилами. Эти сообщения не попадают в основной JSON-журнал и консоль.
 +
 . Сохраните изменения конфигурационного файла.
-+
-[NOTE]
-====
-Уровень журналирования может быть изменён методом `/Log/SetLogLevel`, если пользователь, который вызывает метод, состоит в группе *{dv-admins-serv}*. Методом можно задать следующие уровни: *_Trace = 0_*, *_Debug = 1_*, *_Info = 2_*, *_Warn = 3_*, *_Error = 4_* (любое другое значение будет распознано как *_Error_*). Передать уровень журналирования можно, например, при помощи GET-параметра `minLevel`:
+// end::webconfig[]
 
- Log/SetLogLevel?minLevel=0
+NOTE: Для приведённой конфигурации уровень журналирования изменяется параметрами `fileLogLevel` и `consoleLogLevel` в секции `NLog.variables`. Метод `/Log/SetLogLevel` рассчитан на прежнюю конфигурацию с целью `DefaultLogFileAsync` и не изменяет уровни `logFile` и `logConsole`.
 
-// Данный способ применим для случая, когда есть потребность не перезагружать пул {wc}а.
-После перезапуска службы Сервера {wc}а уровень журналирования будет возвращён в исходное состояние в соответствии с конфигурационным файлом.
-====
+include::GBL-3610@engineer:ROOT:partial$modes-archivation-redefine.adoc[]
 
 [#advanced-logging]
 == Расширенное журналирование

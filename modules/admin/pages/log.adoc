@@ -1,19 +1,41 @@
 = Протоколирование событий
 
-. При остановке службы Сервера {wc}а в файл журнала {wc}а добавляется запись о завершении {wc}а, например:
+:of-what: {wc}а
+:version: {new-log-req}
+
+include::GBL-3610@engineer:ROOT:partial$excerpts.adoc[tags=nlog-json]
+
+При обновлении {wc}а с сохранением прежней конфигурации сохраняется заданный в ней текстовый формат журнала. Для перехода на JSON используйте конфигурацию из раздела "xref:log-config.adoc[]". Там же описаны настройка уровней журналирования и архивирование файлов.
+
+.При включённой записи основного журнала в файл:
+. Имя файла определяется параметром `fileName` цели `logFile` в секции `NLog.targets`.
 +
- [2022-10-26 17:38:08.1840][Error][DocsVision.Platform.WebClient.Diagnostics.Trace.TraceError]  Application end: HostingEnvironment
+В прежней конфигурации имя файла содержит название БД в режиме мультитенантности, ID процесса и дату, например:
 +
-. При старте службы Сервера {wc}а создаётся новый файл журнала {wc}а.
-. К названию файла журнала добавляется ID процесса и дата запуска {wc}а: 
+[source]
+----
+WebClient${event-properties:item=Tenant} PID ${processId} ${shortdate}.log
+----
 +
- WebClient${event-properties:item=Tenant} PID $\{processId} $\{shortdate}.log
+Например, `WebClient PID 4592 2026-10-16.log`.
 +
-Например: `WebClient PID 4592 2022-10-26.log`
+В новой конфигурации основной журнал записывается в `WebClient.log` в Windows и `webclient.log` в Linux. ID процесса сохраняется в поле `processId` каждой JSON-записи.
+. В новой конфигурации при запуске службы Сервера {wc}а запись продолжается в существующем файле журнала. Если файла нет, он создаётся при первой записи. Архивирование выполняется по дате или размеру файла, см. раздел "xref:log-config.adoc#archivation[Архивирование журналов работы]".
+. При запуске службы формируются сообщения `Loading WebClient App` и `WebClient App is loaded!!!` с уровнем `Info`. Пример записи о завершении запуска в формате JSON:
 +
-. В созданный файл добавляется сообщение о старте {wc}а, например:
+[source,json]
+----
+{
+  "timestamp": "2026-10-16 17:11:56.877",
+  "level": "INFO",
+  "module": "DocsVision.WebClient.Startup",
+  "message": "WebClient App is loaded!!!",
+  "processId": "4592"
+}
+----
 +
- [2022-10-26 17:11:56.8774][Error][DocsVision.Platform.WebClient.Diagnostics.Trace.TraceError]  Application start
+NOTE: По умолчанию в новой конфигурации установлен уровень `Error`, поэтому сообщения запуска не записываются. Чтобы они попадали в файл журнала, задайте `fileLogLevel` равным `Info`, а для вывода в консоль -- `consoleLogLevel` равным `Info`.
+. Если работа службы завершается из-за необработанного исключения, формируется сообщение уровня `Error`, начинающееся с `WebClient is stopped because of exception`. В новой конфигурации JSON-запись содержит имя логгера `DocsVision.WebClient.Program` в поле `module`, а сообщение и сведения об исключении -- в поле `message`.
 
 [#webc-requests]
 == Протоколирование запросов сервера {wc}а
@@ -161,6 +183,6 @@ include::6.1@webclient:admin:partial$excerpts.adoc[tags=no-rights]
 * `sc(Content-Type)` -- Тип контента ответа. Значение по умолчанию: `$&#x7b;aspnet-response-contenttype&#x7d;`.
 * `sc-bytes` -- Отправлено байт. Значение по умолчанию: `$&#x7b;aspnet-response-contentlength&#x7d;`.
 * `sc-response-has-started` -- Были ли отправлены заголовки ответа, т.е. начался ли уже ответ или нет. Значения `0` или `1`. Значение по умолчанию: `$&#x7b;aspnet-response-has-started&#x7d;`.
-* `sc-status` -- Код статуса ответа (`200`, `404` и т.д.). Значение по умолчанию: `$&#x7b;aspnet-response-statuscode&#x7d;`.
+* `sc-status` -- Код статуса ответа (`200`, `404` и т.д.). Значение по умолчанию: `$&#x7b;aspnet-response-status&#x7d;`.
 * `time-taken` -- Сколько времени заняла обработка запроса (в миллисекундах). Значение по умолчанию: `$&#x7b;aspnet-request-duration&#x7d;`.
 ====
