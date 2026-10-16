@@ -136,16 +136,7 @@ image::6.1@webclient:user:r7-notice.png[Диалог сохранения в Р7
 +
 WARNING: При работе _DVSupService_ с Р7-Офис может появляться диалог сохранения. В таком случае необходимо, не изменяя директорию, нажать menu:Сохранить[Да].
 +
-. Посмотреть журнал работы можно по адресу `/var/log/docsvision/dvsupservice/$ДД-ММ-ГГГГ_DvSupService.log`. +
-Путь по умолчанию может быть изменён в конфигурационном файле службы:
-+
-[source,json]
-----
-{
-"fileName": "/var/log/docsvision/dvsupservice/${shortdate}_DvSupService.log"
-}
-----
-+
+. Журнал работы ведётся согласно настройкам в конфигурационном файле службы, см. подробнее "xref:webservices-logging.adoc[]".
 . [[about-dvsup]]Чтобы просмотреть информацию о службе, выполните команду:
 +
 [tabs]

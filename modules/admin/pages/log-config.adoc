@@ -2,19 +2,20 @@
 :version: {wc-log-req}
 :webclient: trushno
 
-= Журналирование {wc}аwc-
+= Журналирование {wc}а
 
 include::GBL-3610@engineer:ROOT:partial$excerpts.adoc[tags=nlog-json]
 
 [subs="specialchars,attributes,quotes"]
 По умолчанию основной журнал {wc}а записывается в файл {log-wc}.
 
+:module-service: {wc}а
+include::6.1@webclient:admin:partial$excerpts.adoc[tags=no-rights]
+
 Диагностические журналы параметров производительности сохраняются отдельно в формате `.tsv`. В приведённой ниже конфигурации `NLog` цели и правила для них уже настроены. Чтобы включить диагностическое журналирование, задайте параметр `EnableDiagnosticsLogger` и используйте запросы из раздела "xref:log-config.adoc#advanced-logging[Расширенное журналирование]".
 
 [#config]
 == Настройка журналирования
-
-include::partial$excerpts.adoc[tags=ifabsent]
 
 // tag::webconfig[]
 .Чтобы изменить настройки:

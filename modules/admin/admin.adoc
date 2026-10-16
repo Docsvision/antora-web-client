@@ -64,6 +64,7 @@
 **** xref:webservices-install.adoc[]
 **** xref:webservices-port.adoc[]
 **** xref:webservices-launch.adoc[]
+**** xref:webservices-logging.adoc[]
 **** xref:scan-settings.adoc[]
 *** xref:change-transport.adoc[]
 *** xref:use-kerberos.adoc[]

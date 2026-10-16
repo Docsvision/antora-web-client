@@ -1,0 +1,170 @@
+:of-what: DVSupService
+:version: {new-log-req}
+:dvsupservice: yeah
+
+= Журналирование DVSupService
+
+include::GBL-3610@engineer:ROOT:partial$excerpts.adoc[tags=nlog-json]
+
+По умолчанию журнал сохраняется в файл `/var/log/docsvision/dvsupservice/dvsupservice.log`.
+
+:module-service: DVSupService
+include::6.1@webclient:admin:partial$excerpts.adoc[tags=no-rights]
+
+[#config]
+== Настройка журналирования
+
+Настройки журналирования задаются в конфигурационном файле службы по адресу `/usr/lib/docsvision/dvsupservice/appsettings.json`.
+
+.Чтобы изменить настройки журналирования:
+. Откройте конфигурационный файл `/usr/lib/docsvision/dvsupservice/appsettings.json`.
+. Измените параметры журналирования в секции `NLog`:
++
+.Фрагмент конфигурационного файла DVSupService:
+[source,json]
+----
+{
+  "NLog": {
+    "throwConfigExceptions": false, <.>
+    "extensions": [ <.>
+      { "assembly": "NLog.Extensions.Logging" },
+      { "assembly": "NLog.Web.AspNetCore" }
+    ],
+    "variables": { <.>
+      "fileLogLevel": "Error", <.>
+      "consoleLogLevel": "Error", <.>
+      "enableFileLogging": "true", <.>
+      "enableConsoleLogging": "true", <.>
+      "jsonLayout": { <.>
+        "type": "JsonLayout", <.>
+        "includeAllProperties": true, <.>
+        "attributes": [ <.>
+          {
+            "name": "timestamp", <.>
+            "layout": "${date:format=yyyy-MM-dd HH\\:mm\\:ss.fff}" <.>
+          },
+          {
+            "name": "level",
+            "layout": "${level:upperCase=true}"
+          },
+          {
+            "name": "module",
+            "layout": "${logger}"
+          },
+          {
+            "name": "message",
+            "layout": "${message:withException=true}" <.>
+          },
+          {
+            "name": "processId",
+            "layout": "${processid}"
+          }
+        ]
+      }
+    },
+    "targets": { <.>
+      "async": true, <.>
+      "logFile": { <.>
+        "type": "File", <.>
+        "fileName": "${gdc:docsvisionLogFolder}/${gdc:moduleName}/${gdc:moduleName}.log", <.>
+        "layout": "${var:jsonLayout}", <.>
+        "archiveEvery": "Day", <.>
+        "archiveAboveSize": 314572800, <.>
+        "archiveFileName": "${gdc:docsvisionLogFolder}/${gdc:moduleName}/archives/${gdc:moduleName} {#}.log", <.>
+        "archiveNumbering": "DateAndSequence", <.>
+        "archiveDateFormat": "yyyy-MM-dd", <.>
+        "maxArchiveFiles": 30, <.>
+        "createDirs": true <.>
+      },
+      "logConsole": { <.>
+        "type": "Console",
+        "layout": "${var:jsonLayout}"
+      }
+    },
+    "rules": [ <.>
+      {
+        "logger": "Microsoft.*",
+        "maxLevel": "Warn",
+        "final": true
+      },
+      {
+        "logger": "*",
+        "minLevel": "${when:when='${var:enableFileLogging:lowercase=true}' == 'true':inner=${var:fileLogLevel}:else=Off}",
+        "writeTo": "logFile"
+      },
+      {
+        "logger": "*",
+        "minLevel": "${when:when='${var:enableConsoleLogging:lowercase=true}' == 'true':inner=${var:consoleLogLevel}:else=Off}",
+        "writeTo": "logConsole"
+      }
+    ]
+  }
+}
+----
+<.> `throwConfigExceptions` -- определяет поведение приложения при обнаружении ошибок в конфигурации NLog.
++
+Если параметр установлен в `true`, любая ошибка в конфигурации вызовет исключение.
++
+<.> `extensions` -- загружает дополнительные сборки (`.dll`), расширяющие возможности NLog.
+<.> `variables` -- раздел определяет параметры, которые используются в других частях конфигурации.
+<.> `fileLogLevel` -- задаёт уровень журналирования для файла журнала.
+<.> `consoleLogLevel` -- задаёт уровень журналирования для консоли (stdout/stderr).
+<.> `enableFileLogging` -- включает или отключает ведение журнала в файл.
+<.> `enableConsoleLogging` -- включает или отключает ведение журнала в консоль (stdout/stderr).
+<.> `jsonLayout` -- определяет JSON-структуру сообщений журнала.
+<.> `type` -- указывает на использование JSON-макета.
+<.> `includeAllProperties` -- регулирует, будут ли добавляться в вывод все дополнительные свойства, переданные в контексте журналирования.
+<.> `attributes` -- раздел с парными параметрами вида `"name"`/`"layout"`, определяющий поля JSON.
+<.> `name` -- значение `timestamp` добавляет отметку времени.
+<.> `layout` -- значение `$&#123;date:format=yyyy-MM-dd HH\\:mm\\:ss.fff&#125;` задаёт формат отображения времени.
+<.> `layout` -- значение `$&#123;message:withException=true&#125;` добавляет сведения об исключении к тексту сообщения.
+<.> `targets` -- настройки режимов журналирования.
+<.> `async` -- регулирует асинхронную обработку целей, указанных в этом блоке. Журналирование выполняется в фоновом режиме, не блокируя работу системы, что повышает производительность при высокой нагрузке.
+<.> `logFile` -- настройки для режима вывода журнала в файл.
+<.> `type` -- указывает на использование файла.
+<.> `fileName` -- формирует шаблон имени файла, в параметре можно использовать https://github.com/nlog/NLog/wiki/File-target[допустимые для NLog переменные].
+<.> `layout` -- ссылка на общий JSON-формат, определённый в `jsonLayout`.
+<.> `archiveEvery` -- создавать новый архивный файл каждый заданный период, по умолчанию -- каждый день.
+<.> `archiveAboveSize` -- если текущий файл превышает `300` Мб (значение по умолчанию), он будет немедленно архивирован, даже если заданный в `archiveEvery` период не завершился.
+<.> `archiveFileName` -- шаблон имени для архивов, `&#123;#&#125;` заменяется на номер архива.
+<.> `archiveNumbering` -- значение `DateAndSequence` задаёт нумерацию архивов по дате и порядковому номеру (например, `MyLog 2026-09-09 1.log`).
+<.> `archiveDateFormat` -- задаёт формат даты, которая подставляется в имя архивного файла при архивации журнала.
+<.> `maxArchiveFiles` -- максимальное количество архивных файлов, после которого старые файлы будут удаляться. По умолчанию -- `30`.
+<.> `createDirs` -- флаг регулирует автоматическое создание каталогов журналов. Каталоги будут создаваться автоматически, когда флаг в значении `true`.
+<.> `logConsole` -- настройки для режима вывода журнала в stdout/stderr процесса, например _journald_ в терминале Linux. Формат -- тот же JSON, что и для файла.
+<.> `rules` -- правила журналирования. Определяют, какой логгер (`logger`), с каким уровнем (`minLevel`, `maxLevel`) и в каком режиме (`writeTo`) будет писать сообщения.
++
+Допустимые уровни протоколирования приведены https://github.com/nlog/NLog/wiki/Configuration-file#log-levels[на странице NLog в GitHub]. +
+Для получения дополнительной информации о других настройках NLog обратитесь к документации по данной платформе.
++
+. Сохраните изменения конфигурационного файла.
+. Перезапустите службу DVSupService:
++
+[source,shell]
+----
+sudo systemctl restart dvsupservice
+----
++
+. Проверьте записи в файле журнала или <<system-log,системном журнале>>.
++
+NOTE: При уровне `Error` записи появятся только при возникновении ошибок или более серьёзных событий. Отсутствие новых записей после перезапуска само по себе не означает, что журналирование отключено.
+
+include::GBL-3610@engineer:ROOT:partial$modes-archivation-redefine.adoc[]
+
+[#system-log]
+== Просмотр системного журнала
+
+При включённом режиме `logConsole` служба выводит записи в стандартный поток вывода процесса. Для службы, запущенной через `systemd`, просмотреть их можно командой:
+
+[source,shell]
+----
+sudo journalctl -u dvsupservice -o cat
+----
+
+.Чтобы наблюдать новые записи по мере появления, выполните команду:
+[source,shell]
+----
+sudo journalctl -u dvsupservice -o cat -f
+----
+
+Для изменения уровня консольного вывода задайте значение `consoleLogLevel` в секции `NLog.variables`, например `Info`, сохраните файл и перезапустите службу. Уровень файлового журнала задаётся отдельно параметром `fileLogLevel`.
