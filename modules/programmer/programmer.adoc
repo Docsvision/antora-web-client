@@ -1,6 +1,6 @@
 * Руководство по разработке решений
 ** xref:dv6@programmer:WebClient:development.adoc[]
-*** xref:dv6@programmer:WebClient:net6.adoc[]
+*** xref:dv6@programmer:WebClient:dotnet.adoc[]
 *** xref:dv6@programmer:WebClient:where-begin.adoc[]
 **** xref:dv6@programmer:WebClient:web-client-samples.adoc[]
 **** xref:dv6@programmer:WebClient:how-to-use-js-api.adoc[]
