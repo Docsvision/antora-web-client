@@ -1,12 +1,14 @@
 = Параметры конфигурационного файла {wc}а
 
-Конфигурационный файл {wc}а располагается по адресу `{webconfig}`.
+Конфигурационный файл {wc}а располагается по адресу `{webconfig-win}`.
 
 Если какая-либо настройка отсутствует в конфигурационном файле, создайте её самостоятельно.
 
 [WARNING]
 ====
 Настройки не сохраняются при xref:update-module.adoc[обновлении версии {wc}а].
+
+После изменения параметров необходимо перезапустить пул {wc}а.
 ====
 
 [#general]
@@ -61,6 +63,15 @@ include::max-preview-size.adoc[tags=webconfig]
 
 Подробнее см. "xref:max-preview-size.adoc[]".
 
+[#session-recreation]
+=== Повторное создание сессий при длительных запросах
+
+include::session-recreation.adoc[tags=webconfig]
+
+include::session-recreation.adoc[tags=webconfig-1]
+
+Подробнее см. "xref:session-recreation.adoc[]".
+
 [#look]
 == Настройки внешнего вида
 
@@ -85,6 +96,25 @@ include::hide-sidebar.adoc[tags=webconfig]
 
 Подробнее см. "xref:hide-sidebar.adoc[]".
 
+[#hide-user-avatars]
+== Скрытие фото сотрудников
+
+.Чтобы скрыть фотографии сотрудников:
+. Откройте конфигурационный файл `{webconfig-win}`.
+. Перейдите к секции {setgroups-wc}.
+. Измените значение параметра *_HideUserAvatars_*:
++
+[source]
+----
+<SettingGroup Name="WebClient">
+    <Setting Name="HideUserAvatars" Value="true" /> <.>
+</SettingGroup>
+----
+<.> `HideUserAvatars`:
++
+* *_false_* -- фотографии сотрудников не скрываются (значение по умолчанию).
+* *_true_* -- фотографии сотрудников скрыты, во всех элементах интерфейса вместо фотографий сотрудников отображаются xref:layouts:guide-layouts-user-profile.adoc#edit[изображения по умолчанию].
+
 [#dvweb]
 == Настройки DVWebtool
 
@@ -106,11 +136,11 @@ include::webservices-port.adoc[tags=webconfig]
 == Настройки аутентификации
 
 [#auth-ad]
-=== {wc} в сети без Active Directory
+=== Автоматическая подстановка домена при входе
 
-include::no-active-dir.adoc[tags=webconfig]
+include::default-domain.adoc[tags=webconfig]
 
-Подробнее см. "xref:no-active-dir.adoc[]".
+Подробнее см. "xref:default-domain.adoc[]".
 
 // [#auth-page]
 // === Настройки страницы входа
@@ -143,13 +173,6 @@ include::user-session-timeout.adoc[tags=webconfig]
 
 Подробнее см. "xref:user-session-timeout.adoc[]".
 
-[#session-clear]
-=== Очистка пользовательских сессий
-
-include::clear-cache-config.adoc[tags=webconfig]
-
-Подробнее см. "xref:clear-cache-config.adoc[]".
-
 [#session-close]
 === Закрытие неактивных сессии
 
@@ -173,6 +196,13 @@ include::digital-sign-stamp.adoc[tags=webconfig]
 include::install-cryptopro.adoc[tags=webconfig]
 
 Подробнее см. "xref:install-cryptopro.adoc[]".
+
+[#sign-d-load]
+=== Скачивание файла в браузер
+
+include::download-signature.adoc[tags=webconfig]
+
+Подробнее см. "xref:download-signature.adoc[]".
 
 [#views]
 == Настройки представлений
