@@ -31,7 +31,7 @@
 ***** xref:dv5@programmer:WebClient:client/grid-group-by-icon.adoc[]
 ***** xref:dv5@programmer:WebClient:client/grid-toolbar-button.adoc[]
 ***** xref:dv5@programmer:WebClient:client/grid-line-background.adoc[]
-**** xref:dv5@programmer:WebClient:client/edi-web-extension.adoc[]
+**** xref:GBL-3505@programmer:WebClient:client/edi-web-extension.adoc[]
 **** xref:dv5@programmer:WebClient:client/extend-server-query.adoc[]
 **** xref:dv5@programmer:WebClient:client/signing-api.adoc[]
 **** xref:dv5@programmer:WebClient:client/file-list-row.adoc[]
