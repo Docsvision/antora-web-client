@@ -32,6 +32,7 @@ asciidoc:
     no-root-since: '{wc-no-root-since}'
     hash-rq: 'сборка 909 и выше'
     log-wc: '`/var/log/docsvision/webclient/webclient.log` для Linux и `C:\ProgramData\Docsvision\WebClient\WebClient.log` для Windows'
+    wc-react: '6.1, сборка 6478'
 nav:
 - modules/ROOT/nav.adoc
 - modules/common/common.adoc
